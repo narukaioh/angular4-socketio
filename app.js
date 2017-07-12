@@ -16,7 +16,7 @@ app.post('/', (req, res) => {
 
 io.on('connection', socket => {
     console.log('Usuario conectado')    
-    socket.on('disconnect', () => console.log('Usuario disconectado') )
+    socket.on('disconnect', () => console.log('Usuario desconectado') )
     socket.on('save-message', data => {
         console.log(data)
         io.emit('new-message', { message: data }) 
